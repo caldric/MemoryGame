@@ -36,6 +36,7 @@ nav a {
   margin-left: 20px;
   margin-right: 20px;
   color: white;
+  border-bottom: 2px solid transparent;
 }
 
 h1 {
@@ -56,4 +57,45 @@ p {
 
 img {
   margin: 40px 8px;
+}
+
+footer {
+  text-transform: uppercase;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #0D2C40;
+  color: white;
+  font-size: 14px;
+  letter-spacing: .08em;
+  font-weight: 500;
+}
+
+footer p {
+  font-family: Raleway, sans-serif;
+}
+
+.copyright {
+  float: left;
+}
+
+.message {
+  float: right;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: " ";
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+
+.name {
+  color: #F15B31;
+  font-weight: 700;
+}
+
+nav a:hover {
+  border-bottom-color: white;
 }
