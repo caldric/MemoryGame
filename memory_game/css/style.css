@@ -1,85 +1,12 @@
+/* =============================
+GENERAL STYLES 
+================================ */
 body {
-  text-align: center;
-  margin: 0;
-}
-
-main {
-  width: 850px;
-  margin: 35px auto;
-}
-
-a {
-  text-decoration: none;
-}
-
-h1, h2, nav {
   font-family: "Raleway", sans-serif;
-  letter-spacing: 1px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-header {
-  background-color: #F15B31;
-  color: white;
-  padding: 30px 20px;
-}
-
-nav {
+  text-align: center;
   font-size: 18px;
-  background-color: #00A6B3;
-  padding: 20px 0;
+  -webkit-font-smoothing: antialiased;
   margin: 0;
-}
-
-nav a {
-  margin-left: 20px;
-  margin-right: 20px;
-  color: white;
-  border-bottom: 2px solid transparent;
-}
-
-h1 {
-  font-weight: 400;
-  font-size: 45px;
-  margin: 0;
-}
-
-h2 {
-  font-size: 20px;
-}
-
-p {
-  font-family: "Droid Serif", serif;
-  line-height: 26px;
-  font-size: 18px;
-}
-
-img {
-  margin: 40px 8px;
-}
-
-footer {
-  text-transform: uppercase;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: #0D2C40;
-  color: white;
-  font-size: 14px;
-  letter-spacing: .08em;
-  font-weight: 500;
-}
-
-footer p {
-  font-family: Raleway, sans-serif;
-}
-
-.copyright {
-  float: left;
-}
-
-.message {
-  float: right;
 }
 
 .clearfix:after {
@@ -91,11 +18,107 @@ footer p {
   font-size: 0;
 }
 
-.name {
-  color: #F15B31;
-  font-weight: 700;
+/* =============================
+TYPOGRAPHY
+================================ */
+h1, h2 {
+  text-transform: uppercase;
 }
 
-nav a:hover {
-  border-bottom-color: white;
+h1 {
+  color: white;
+  font-size: 45px;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  color: #0D2C40;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+p {
+  font-family: "Droid Serif", serif;
+  line-height: 26px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .06em;
+
+  margin: 0 20px;
+  /* For hover style transition (bonus) */
+  border-bottom: 2px solid transparent;
+/*   transition: all .3s ease-in-out; */
+}
+
+a:hover {
+  border-bottom: 2px solid white;
+}
+/* =============================
+HEADER
+================================ */
+header {
+  background-color: #F15B31;
+  padding: 30px 20px;
+}
+
+/* =============================
+NAV
+================================ */
+nav {
+  background-color: #00A6B3;
+  padding: 20px 0;
+}
+
+/* =============================
+MAIN SECTION
+================================ */
+
+main {
+  width: 850px;
+  margin: 35px auto;
+}
+
+
+/* =============================
+GAME BOARD
+================================ */
+img {
+  margin: 40px 8px 0;
+}
+
+/* =============================
+FOOTER
+================================ */
+footer {
+  text-transform: uppercase;
+  padding: 0 20px;
+  background-color: #0D2C40;
+  color: white;
+  font-size: 14px;
+  letter-spacing: .08em;
+  font-weight: 500;
+
+}
+
+.copyright {
+  float: left;
+  font-family: "Raleway", sans-serif;
+}
+
+.message {
+  float: right;
+  font-family: "Raleway", sans-serif;
+}
+
+.name {
+  color: #F15B31;
+  font-weight: bold;
 }
