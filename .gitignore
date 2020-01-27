@@ -1,0 +1,5 @@
+# exclude hidden file items that begin with "."
+.*
+
+# do not exclude .gitignore
+!/.gitignore
