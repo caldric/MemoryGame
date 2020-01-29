@@ -6,6 +6,59 @@ class Card {
   }
 }
 
+function addCard(cardId) {
+  // Add card to the array of selected cards
+  console.log(`User flipped ${cards[cardId].rank}`);
+  cardsInPlay.push(cards[cardId]);
+}
+
+function moveIsValid(cardId) {
+  // Check whether the next move is valid
+  if (cardsInPlay.length === 1 && cardsInPlay[0] === cards[cardId]) {
+    return false;
+  }
+  return true;
+}
+
+function cardsMatch() {
+  // Check if first card matches second card
+  if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
+    return true;
+  }
+  return false;
+}
+
+function flipCard() {
+  // Event listener function
+  let cardId = this.getAttribute('data-id');
+  if (moveIsValid(cardId)) {
+    addCard(cardId);
+  } else {
+    alert("Invalid move. Please try again.");
+  }
+
+  this.setAttribute('src', cards[cardId].cardImage);
+
+  if (cardsInPlay.length === 2) {
+    if (cardsMatch()) {
+      alert("You've found a match!");
+    } else {
+      alert("Cards did not match. Please try again.");
+    };
+    cardsInPlay = [];
+  }
+}
+
+function createBoard() {
+  for (let i = 0; i < cards.length; i++) {
+    let cardElement = document.createElement('img');
+    cardElement.setAttribute('src', 'images/back.png');
+    cardElement.setAttribute('data-id', i);
+    cardElement.addEventListener('click', flipCard);
+    document.getElementById('game-board').appendChild(cardElement);
+  }
+}
+
 let cards = [
   new Card('queen', 'hearts', 'images/queen-of-hearts.png'),
   new Card('queen', 'diamonds', 'images/queen-of-diamonds.png'),
@@ -14,49 +67,4 @@ let cards = [
 ];
 let cardsInPlay = [];
 
-function addCard(cardId) {
-  // Add card to the array of selected cards
-  console.log(`User flipped ${cards[cardId].rank}`);
-  cardsInPlay.push(cards[cardId]);
-}
-
-function isMoveValid(cardId) {
-  // Check whether the next move is valid
-  if (cardsInPlay.length === 1 && cardsInPlay[0] === cards[cardId]) {
-    return false;
-  }
-  return true;
-}
-
-function checkForMatch() {
-  // Check if first card matches second card
-  if (cards[0].rank === cards[1].rank) {
-    console.log("You've found a match!");
-  } else {
-    console.log("Sorry, try again.");
-  }
-}
-
-function flipCard(cardId) {
-  // Main function that deals with user action
-  if (isMoveValid(cardId)) {
-    addCard(cardId);
-  } else {
-    console.log("Invalid move. Please try again.");
-  }
-
-  if (cardsInPlay.length === 2) {
-    checkForMatch();
-    cardsInPlay = [];
-  }
-}
-
-// flipCard(0);
-// flipCard(1);
-//
-// flipCard(0);
-// flipCard(2);
-//
-// flipCard(0);
-// flipCard(0);
-// flipCard(1);
+createBoard();
