@@ -1,2 +1,2 @@
 # Memory game
-Sample website that showcases HTML, CSS, and JavaScript
+Sample [website](https://caldric.github.io/MemoryGame/) that showcases HTML, CSS, and JavaScript
